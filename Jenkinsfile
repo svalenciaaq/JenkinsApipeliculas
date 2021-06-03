@@ -1,3 +1,5 @@
+pipeline{
+   agent any
 node {
    stage('Get Source') {
       // copy source code from local file system and test
@@ -14,4 +16,5 @@ node {
    stage("run docker container"){
         sh "docker run --rm -d  -p 8080:5000/tcp apipeliculas:latest "
     }
+}
 }
