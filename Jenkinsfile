@@ -3,7 +3,7 @@ node {
       // copy source code from local file system and test
       // for a Dockerfile to build the Docker image
       git ('https://github.com/svalenciaaq/JenkinsApipeliculas')
-      if (!fileExists("Dockerfile")) {
+      if (!fileExists('Dockerfile')) {
          error('Dockerfile missing.')
       }
    }
