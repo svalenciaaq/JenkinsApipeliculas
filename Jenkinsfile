@@ -9,8 +9,8 @@ node {
    }
    stage('Build Docker') {
        // build the docker image from the source code using the BUILD_ID parameter in image name
-         sh "sudo docker build -t flask-app ."
+         sh "docker build -t apipeliculas ."
    }
    stage("run docker container"){
-        sh "sudo docker run -p 8000:8000 --name flask-app -d flask-app "
+        sh "docker run --rm -d  -p 8080:5000/tcp apipeliculas:latest "
     }
