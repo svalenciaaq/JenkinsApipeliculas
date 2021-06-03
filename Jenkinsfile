@@ -9,9 +9,9 @@ node {
    }
    stage('Build Docker') {
        // build the docker image from the source code using the BUILD_ID parameter in image name
-         sh "docker build -t apipeliculas ."
+         sh "sudo docker build -t apipeliculas ."
    }
    stage("run docker container"){
-        sh "docker run --rm -d  -p 8080:5000/tcp apipeliculas:latest "
+        sh "sudo docker run --rm -d  -p 8080:5000/tcp apipeliculas:latest "
     }
 }
