@@ -14,3 +14,4 @@ node {
    stage("run docker container"){
         sh "docker run --rm -d  -p 8080:5000/tcp apipeliculas:latest "
     }
+}
