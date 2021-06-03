@@ -1,17 +1,10 @@
-node {
-   stage('Get Source') {
-      // copy source code from local file system and test
-      // for a Dockerfile to build the Docker image
-      git ('https://github.com/upasana-mittal/flask-dockerized-jenkins.git')
-      if (!fileExists("Dockerfile")) {
-         error('Dockerfile missing.')
-      }
-   }
-   stage('Build Docker') {
-       // build the docker image from the source code using the BUILD_ID parameter in image name
-         sh "docker build -t apipeliculas ."
-   }
-   stage("run docker container"){
-        sh "docker run --rm -d  -p 8080:5000/tcp apipeliculas:latest "
+pipeline {
+    agent any 
+    stages {
+        stage('Stage 1') {
+            steps {
+                echo 'Hello world!' 
+            }
+        }
     }
 }
