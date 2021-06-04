@@ -9,7 +9,7 @@ pipeline {
    
    stage("run") { 
       steps { 
-         sh "docker run --rm -d  -p 8080:5000/tcp apipeliculas:latest <"
+         sh "docker run --rm -d  -p 8080:5000/tcp apipeliculas:latest"
       }
    }
 
